@@ -9,25 +9,25 @@ class User(models.Model):
 	alias = models.CharField(max_length=80, default=1)
 
 	def __str__(self):
-		return self.
+		return self.username
 
 class Data(models.Model):
-	user_id = models.ForeignKeyield(User, related_name='user_id')
-	attendence_score = models.IntergerField()
-	git_commits_score = models.IntergerField()
-	discipline_score = models.IntergerField()
+	user = models.ForeignKey(User, related_name='+')
+	attendence_score = models.IntegerField()
+	git_commits_score = models.IntegerField()
+	discipline_score = models.IntegerField()
 	mentor_review = models.CharField(max_length=255)
 	#add another review model that carries all the reviews for the user.
 
 class Attendence(models.Model):
-	user_id = models.ForeignKeyield(User, related_name='user_id')
-	attendence = models.IntergerField()
+	user = models.ForeignKey(User, related_name='+')
+	attendence = models.IntegerField()
 	created_at = models.DateTimeField(auto_now_add=True)
 
 class Github(models.Model):
-	user_id = models.ForeignKeyield(User, related_name='user_id')
-	repo_id = models.IntergerField()
-	url = models.CharField()
+	user = models.ForeignKey(User, related_name='+')
+	repo_id = models.IntegerField()
+	url = models.CharField(max_length=255)
 	last_updated = models.DateTimeField()
 	commits = models.IntegerField()
 
