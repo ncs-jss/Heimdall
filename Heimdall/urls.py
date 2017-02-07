@@ -21,7 +21,7 @@ from app import views as app_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/$', app_views.login_page, name='login'),
+    url(r'^login/$', app_views.login_page, name="login"),
     url(r'^$', app_views.index, name="index"),
     url(r'^home/$', app_views.home, name="home"),
     url(r'^logout/$', app_views.logout_page, name="logout"),
