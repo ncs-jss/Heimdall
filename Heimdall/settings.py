@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -130,4 +130,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "assets"),
 )
 
-LOGIN_URL_REDIRECT = 'home'
+LOGIN_REDIRECT_URL = 'home'
