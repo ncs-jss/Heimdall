@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
@@ -10,23 +10,24 @@ import forms
 def index(request):
 	return render(request, "index.html")
 
-def login(request):
+def login_page(request):
 	if request.method=='POST':
 		form = forms.LoginForm(request.POST)
 		if form.is_valid():
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				if user.is_active:
-					login(request, user)
-					return HttpResponseRedirect(reverse('main', args=[user.username]))
+					login(request,user)
+					return HttpResponseRedirect(reverse('home', args=[user.username]))
 	form = forms.LoginForm()
 	return render(request, 'login.html', {'form': form})
 
 @login_required(login_url='/login/')
-def home(request, username):
-	return HttpResponse("Hello, %s." % username)
+def home(request):
+	user = get_object_or_404(User, username=request.user.username)
+	return HttpResponse("Hello, %s." % user.username)
 
 @login_required(login_url='/login/')
-def logout(request):
+def logout_page(request):
 	logout(request)
 	return HttpResponseRedirect(reverse('index'))
