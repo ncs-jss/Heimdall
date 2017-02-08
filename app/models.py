@@ -5,11 +5,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Member(models.Model):
-	name = models.CharField(max_length=32)
+class Member(models.Model):	
 	year = models.IntegerField()
-	roll = models.CharField(max_length=10)
+	admNo = models.CharField(max_length=10)
 	contactNo = models.CharField(max_length=50)
-	email = models.CharField(max_length=50)
 	github = models.CharField(max_length=100)
 	facebook = models.CharField(max_length=100)

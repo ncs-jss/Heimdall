@@ -26,7 +26,7 @@ def login_page(request):
 @login_required(login_url='/login/')
 def home(request):
 	user = get_object_or_404(User, username=request.user.username)
-	return HttpResponse("Hello, %s." % user.username)
+	return render(request, "home.html", {'user': user})
 
 @login_required(login_url='/login/')
 def logout_page(request):
