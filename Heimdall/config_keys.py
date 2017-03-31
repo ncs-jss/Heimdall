@@ -1,5 +1,5 @@
-NAME = "root"
+NAME = ""
 
-PASSWORD = "root"
+PASSWORD = ""
 
-DBNAME = "heimdall"
+DBNAME = ""
