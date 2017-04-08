@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from app import views as app_views
-# from attendence import views as att_views
+from attendence import views as att_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^home/$', app_views.home, name="home"),
     url(r'^logout/$', app_views.logout_page, name="logout"),
     # url(r'^(?P<username>)/attendance/$', att_views.)
+
+    url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance")
 ]

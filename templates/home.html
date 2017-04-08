@@ -5,16 +5,11 @@
 {% endblock %}
 {% block content %}
 <!-- Header -->
-<header id="header" class="skel-layers-fixed">
-<h1><a href="http://www.hackncs.com">Nibble Computer Society</a></h1>
-<nav id="nav">
-<ul>
-<li><a href="/">Index</a></li>
-<!-- <li><a href="left-sidebar.html">Left Sidebar</a></li>
-<li><a href="right-sidebar.html">Right Sidebar</a></li>
-<li><a href="no-sidebar.html">No Sidebar</a></li>-->
+<h1>Hi, {{user.username}}</h1>
 {% if user.is_authenticated %}
-<li><a href="/logout/" class="button special">LogOut</a></li>
+<li><a href="/">Index</a></li> 
+<li><a href="/attendance/">Attendance</a></li> 
+<li><a href="/logout/">LogOut</a></li>
 {% endif %}
 </ul>
 </nav>
