@@ -1,15 +1,13 @@
 {% extends "base.html" %}
+
 {% block title %}
 <title>Daily Attendance</title>
 {% endblock %}
+
 {% block content %}
 <h1>Daily Attendance</h1>
 {% for u in users %}
-<h2>{{ u.username }}</h2>
-<br>
-<form method="post" action=".">
-{{ form.as_p }}
-</form>
-<br><br>
+<p><input type="checkbox" name="{{ u.id }}">{{ u.username }}</p>
 {% endfor %}
+<button class="attendance" value="attendance">Add Attendance</button>
 {% endblock %}

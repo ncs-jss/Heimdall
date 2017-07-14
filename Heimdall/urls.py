@@ -30,6 +30,8 @@ urlpatterns = [
     
 
     #====================== attendance views ========================================
-    # url(r'^(?P<username>)/attendance/$', att_views.)
+    url(r'^attendance/(?P<uid>\d+)$', att_views.AttendanceView.as_view()),
     url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance")
+
+
 ]
