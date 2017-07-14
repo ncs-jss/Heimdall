@@ -6,12 +6,13 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class LabStatus(models.Model):
-	class Meta:
-		verbose_name_plural="Lab Status"
 	created_on = models.DateField(auto_now_add=True)
 	DayNo = models.IntegerField(default=0)
 	status = models.BooleanField(default=True)
 	message = models.CharField(max_length=140, blank=True, null=True)
+
+	class Meta:
+		verbose_name_plural="Lab Status"
 
 class DailyAttendance(models.Model):
 	

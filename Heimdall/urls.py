@@ -21,11 +21,15 @@ from attendence import views as att_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    #====================== main app views ==========================================
     url(r'^login/$', app_views.login_page, name="login"),
     url(r'^$', app_views.index, name="index"),
     url(r'^home/$', app_views.home, name="home"),
     url(r'^logout/$', app_views.logout_page, name="logout"),
-    # url(r'^(?P<username>)/attendance/$', att_views.)
+    
 
+    #====================== attendance views ========================================
+    # url(r'^(?P<username>)/attendance/$', att_views.)
     url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance")
 ]
