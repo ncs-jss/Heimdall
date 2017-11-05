@@ -16,13 +16,13 @@ from forms import AttendanceForm
 # Create your views here.
 
 class AttendanceView(View):
-	# form = AttendanceForm()
+	form = AttendanceForm()
 	
 	#@method_decorator(login_required)	
 	def get(self, request):
 		users = User.objects.all()
 		print self.form.errors
-		return render(request, "daily_att.html", {'users': users})
+		return render(request, "attendence/attendance.html", {'users': users})
 	
 	@method_decorator(csrf_protect)
 	def post(self, request, uid):

@@ -2,19 +2,19 @@
 @font-face {
 	font-family: 'Metropolis';
 	font-weight: 400;
-	src: url('assets/Metropolis.otf');
+	src: url('Metropolis.otf');
 }
 
 @font-face {
 	font-family: 'Metropolis';
 	font-weight: 600;
-	src: url('assets/Metropolis-SemiBold.otf');
+	src: url('Metropolis-SemiBold.otf');
 }
 
 @font-face {
 	font-family: 'Metropolis';
 	font-weight: 800;
-	src: url('assets/Metropolis-ExtraBold.otf');
+	src: url('Metropolis-ExtraBold.otf');
 }
 /* ---------- */
 
@@ -150,13 +150,18 @@ button:hover {
 
 /* Footer */
 footer {
+	margin: 0 auto;
+	width: 80%;
 	position: fixed;
+	left: 10%;
 	bottom: 0;
-	width: 60%;
 	min-width: 200px;
-	margin: 0 10%;
-	padding: 1rem 10%;
+	padding: 1rem 0rem;
 	background-color: #303F9F;
+}
+
+footer * {
+	margin: auto 2rem;
 }
 
 footer img {
@@ -174,11 +179,28 @@ footer img:hover {
 
 #social a i{
 	color: #FFF;
-	margin-left: 2rem;
+	margin-left: -4rem;
 }
 
 #social i:hover {
 	color: #EEE;
+}
+
+@media screen and (max-width: 540px) {
+	footer * {
+		display: block;
+		text-align: center;
+		padding: initial;
+	}
+
+	#social {
+		float: initial;
+		margin-top: 2rem;
+	}
+
+	#social * {
+		display: inline-block;
+	}
 }
 /* ---------- */
 
@@ -186,8 +208,30 @@ footer img:hover {
 	top: 3rem;
 }
 
-#blue-container {
+#login-container {
 	width: 24%;
+	min-width: 320px;
+	padding: 2rem;
+	background-color: #303F9F;
+	color: #FFF;
+	text-align: center;
+	margin: auto;
+}
+
+#login-container a {
+	color: #F5F5F5;
+}
+
+#login-container a:hover {
+	color: #E0E0E0;
+}
+
+#login-container h2 {
+	margin: 2rem 0;
+}
+
+#blue-container {
+	width: 30%;
 	min-width: 320px;
 	padding: 2rem;
 	background-color: #303F9F;
@@ -208,6 +252,10 @@ footer img:hover {
 	margin: 2rem 0;
 }
 
+#attendance-profile {
+	max-height: 24rem;
+}
+
 #attendance-profile * {
 	vertical-align: middle;
 	display: inline-block;
@@ -216,12 +264,26 @@ footer img:hover {
 	color: #E0E0E0;
 }
 
-#profile-attendance {
-	text-align: right;
+#profile-image {
+	border-radius: 50%;
+	width: 3rem;
 }
 
-#profile-image {
-	width: 1.875rem;
+#attendance-profile input[type="radio"] {
+	display: none;
+}
+
+#attendance-profile input[type="radio"]:checked {
+
+}
+
+#attendance-profile label {
+	padding: 0.8rem 1rem;
+	background-color: #E0E0E0;
+	color: #9E9E9E;
+	font-weight: 600;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 #login input {
