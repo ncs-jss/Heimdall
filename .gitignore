@@ -7,3 +7,11 @@ db.sqlite3
 
 #what to do next time?
 todo.txt
+
+#virtual env files
+bin/
+include/
+lib/
+local/
+pip-selfcheck.json
+share/
