@@ -1,17 +1,26 @@
-{% extends "attendence/base.html" %}
+{% extends attendance/base.html %}
 <!-- Attendance form -->
 {% block content %}
-	<div id="blue-container">
-		<h2>ATTENDANCE FORM</h2>
-		<div id="attendance-profile">
-			<img src="" id="profile-image">
-			<p></p>
-			<input type="radio" name="attendance" id="present">
-			<label for="present"></label>
-			<input type="radio" name="attendance" id="absent">
-			<label for="absent"></label>
-			<input type="radio" name="attendance" id="leave">
-			<label for="leave"></label>
-		</div>
+<div id="blue-container">
+	<h2>ATTENDANCE FORM</h2>
+	<div id="attendance-profile">
+		<img id="profile-image">
+		<p id="profile-name"></p>
+		<ul>
+			<li id="p">
+				<input type="radio" name="attendance" id="present">
+				<label for="present"></label>
+			</li>
+			<li id="a">
+				<input type="radio" name="attendance" id="absent">
+				<label for="absent"></label>
+			</li>
+			<li id="l">
+				<input type="radio" name="attendance" id="leave">
+				<label for="leave"></label>
+			</li>
+		</ul>
 	</div>
+	<button type="submit">SUBMIT</button>
+</div>
 {% endblock %}
