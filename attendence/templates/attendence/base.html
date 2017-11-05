@@ -3,12 +3,13 @@
 <html>
 <head>
 	<title>Heimdall</title>
-  <!-- Custom CSS -->
+	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<!-- Navbar -->
 	<nav id="navbar">
 		<a href="#" id="logo"><img src="assets/logo.png"><span>HEIMDALL</span></a>
 		<a href="#" id="menu"></a>
@@ -17,10 +18,13 @@
 			<li><a href="login.html">SIGN IN</a></li>
 		</ul>
 	</nav>
+	<!-- Main container -->
 	<div id="main-container">
+		<!-- Extension placeholder -->
 		{% block content %}
-        {% endblock %}
+		{% endblock %}
 	</div>
+	<!-- Footer -->
 	<footer>
 		<a href="http://hackncs.com" target="new"><img src="assets/ncs-logo.png"></a>
 		<div id="social">
