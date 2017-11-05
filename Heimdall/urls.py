@@ -18,16 +18,17 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from app import views as app_views
 from attendence import views as att_views
+from app import views as app_views
 from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #====================== main app views ==========================================
-    url(r'^login/$', app_views.login_page, name="login"),
+    url(r'^login/$', auth_views.login, name="login"),
     url(r'^$', app_views.index, name="index"),
     url(r'^home/$', app_views.home, name="home"),
-    url(r'^logout/$', app_views.logout_page, name="logout"),
+    url(r'^logout/$', auth_views.logout, name="logout"),
     
 
     #====================== attendance views ========================================

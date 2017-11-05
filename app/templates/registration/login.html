@@ -1,0 +1,15 @@
+
+{% extends "registration/base.html" %}
+{% block content %}
+<br>
+<br>
+	<div id="blue-container">
+		<h2>SIGN IN</h2>
+		<form method="post" id="login">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">LOGIN</button>
+		</form>
+		<p><a href="#">Forgot password?</a></p>
+	</div>
+{% endblock %}

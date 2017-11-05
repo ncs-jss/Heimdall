@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heimdall</title>
+  <!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<nav id="navbar">
+		<a href="#" id="logo"><img src="assets/logo.png"><span>HEIMDALL</span></a>
+		<a href="#" id="menu"></a>
+		<ul id="nav-link">
+			<li><a href="#" class="active">HOME</a></li>
+			<li><a href="login.html">SIGN IN</a></li>
+		</ul>
+	</nav>
+	<div id="main-container">
+		{% block content %}
+        {% endblock %}
+	</div>
+	<footer>
+		<a href="http://hackncs.com" target="new"><img src="assets/ncs-logo.png"></a>
+		<div id="social">
+			<a href="https://github.com/ncs-jss" target="new"><i class="fa fa-github fa-2x"></i></a>
+			<a href="https://www.facebook.com/nibblecomputersociety" target="new"><i class="fa fa-facebook-official fa-2x"></i></a>
+		</div>
+	</footer>
+</body>
+</html>
