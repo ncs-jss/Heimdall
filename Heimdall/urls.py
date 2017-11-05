@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from app import views as app_views
 from attendence import views as att_views
+from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,7 +32,13 @@ urlpatterns = [
 
     #====================== attendance views ========================================
     url(r'^attendance/(?P<uid>\d+)$', att_views.AttendanceView.as_view()),
-    url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance")
+    url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance"),
+
+
+
+    #====================Django spaggeti View =======================================
+    url(r'^plate/', include('django_spaghetti.urls')),
 
 
 ]
+

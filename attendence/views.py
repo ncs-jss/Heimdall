@@ -4,9 +4,12 @@ from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic.list import ListView 
+from django.views.generic.detail import DetailView
 
-from models import LabStatus, DailyAttendance, UserAttendence
-from app.models import Member
+from models import LabStatus, dailyAttendance, UserAttendence
+from app.models import MemberProfile
+
 
 from forms import AttendanceForm
 
@@ -15,7 +18,7 @@ from forms import AttendanceForm
 class AttendanceView(View):
 	# form = AttendanceForm()
 	
-	@method_decorator(login_required)	
+	#@method_decorator(login_required)	
 	def get(self, request):
 		users = User.objects.all()
 		print self.form.errors
@@ -34,3 +37,38 @@ class AttendanceView(View):
 			return HttpResponseRedirect('/attendance/')
 
 
+
+class AttendanceListView(ListView):
+	
+	template_name = ""
+	model = UserAttendence
+
+ 	def get_context_data(self):
+
+ 		return UserAttendence.objects.all()
+
+
+
+#login required decorater
+class AttendenceDetailView(DetailView):
+
+	template_name = "xyz.html"
+	model = dailyAttendance
+
+	@method_decorator(login_required)
+	def get_context_data(self):
+		
+		return dailydAttendence.objects.all()
+
+
+
+class TakingAttendenceView(object):
+	"""Taking Attendence View"""
+
+	@method_decorator(login_required)
+	def takingAttendence(self, request):
+
+		user = User.objects.get(username = request.user.username)
+		
+
+		

@@ -5,8 +5,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Member(models.Model):	
-
+class MemberProfile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 	year = models.IntegerField()
 	club = models.CharField(max_length=32, default=" ")

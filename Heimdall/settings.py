@@ -38,9 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_spaghetti',
     'app',
     'attendence',
 ]
+
+
+SPAGHETTI_SAUCE = {
+  'apps':['app','attendence'],
+  'show_fields':False,
+  'exclude':{'auth':['user']}
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

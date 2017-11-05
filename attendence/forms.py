@@ -1,8 +1,10 @@
 from django import forms
-from models import DailyAttendance
+from . models import dailyAttendance
 
 class AttendanceForm(forms.Form):
+
+	
 	class Meta:
-		model = DailyAttendance
+		model = dailyAttendance
 		fields = ['status']
 		
