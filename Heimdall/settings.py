@@ -38,9 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_spaghetti',
     'app',
     'attendence',
 ]
+
+
+SPAGHETTI_SAUCE = {
+  'apps':['app','attendence'],
+  'show_fields':False,
+  'exclude':{'auth':['user']}
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,3 +146,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "assets"),
 )
 
+
+LOGIN_REDIRECT_URL = 'dailyAttendance'

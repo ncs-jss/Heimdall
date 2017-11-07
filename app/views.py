@@ -11,24 +11,10 @@ import forms
 def index(request):
 	return render(request, "index.html")
 
-def login_page(request):
-	if request.method=='POST':
-		username = request.POST['username']
-		password = request.POST['password']
-		user = authenticate(username=username, password=password)
-		if user is not None:
-			if user.is_active:
-				login(request, user)
-				return HttpResponseRedirect('/home/')
-	form = forms.LoginForm()
-	return render(request, 'login.html', {'form': form})
 
 @login_required(login_url='/login/')
 def home(request):
 	user = get_object_or_404(User, username=request.user.username)
-	return render(request, "home.html", {'user': user})
+	return render(request, "registration/base.html", {'user': user})
 
-@login_required(login_url='/login/')
-def logout_page(request):
-	logout(request)
-	return HttpResponseRedirect(reverse('index'))
+

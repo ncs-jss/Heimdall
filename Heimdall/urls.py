@@ -18,20 +18,34 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from app import views as app_views
 from attendence import views as att_views
+from app import views as app_views
+from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #====================== main app views ==========================================
-    url(r'^login/$', app_views.login_page, name="login"),
+    url(r'^login/$', auth_views.login, name="login"),
     url(r'^$', app_views.index, name="index"),
     url(r'^home/$', app_views.home, name="home"),
-    url(r'^logout/$', app_views.logout_page, name="logout"),
+    url(r'^logout/$', auth_views.logout, name="logout"),
+    url(r'^password_reset/$', auth_views.password_reset, name='password_reset'),
+    url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
+
     
 
     #====================== attendance views ========================================
     url(r'^attendance/(?P<uid>\d+)$', att_views.AttendanceView.as_view()),
-    url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance")
+    url(r'^attendance/$', att_views.AttendanceView.as_view(), name="dailyAttendance"),
+
+
+
+    #====================Django spaggeti View =======================================
+    url(r'^plate/', include('django_spaghetti.urls')),
 
 
 ]
+
